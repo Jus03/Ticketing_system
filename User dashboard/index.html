@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="viewport">
+    <!-- Orb scene -->
+    <div class="orb-scene">
+      <div class="orb o-center"></div>
+      <div class="orb o-wh-lg"></div>
+      <div class="orb o-teal-md"></div>
+      <div class="orb o-wh-sm"></div>
+      <div class="orb o-teal-sm"></div>
+      <div class="orb o-teal-bot"></div>
+      <div class="orb o-tiny"></div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <button class="sb-ham" aria-label="Menu">&#9776;</button>
+
+      <div class="sb-avatar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+          <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+        </svg>
+      </div>
+
+      <button class="nav-btn active">Text</button>
+      <button class="nav-btn">Text</button>
+      <button class="nav-btn">Text</button>
+      <button class="nav-btn">Text</button>
+
+      <div class="sb-spacer"></div>
+
+      <button class="logout-btn" onclick="window.location='login-admin.html'">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/>
+          <polyline points="16 17 21 12 16 7"/>
+          <line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+        Log out
+      </button>
+    </aside>
+
+    <!-- Hero -->
+    <main class="main">
+      <div class="hero-sub">heading1</div>
+      <div class="hero-main">
+        Heading1
+        <span class="hero-arrow">&#8594;</span>
+      </div>
+      <button class="apply-btn">Apply</button>
+    </main>
+
+  </div>
+
+</body>
+</html>

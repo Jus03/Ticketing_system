@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR — fixed at top always -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#">NAV</a></li>
+            <li><a href="#">NAV</a></li>
+            <li><a href="#">NAV</a></li>
+            <li><a href="#">NAV</a></li>
+        </ul>
+        <button class="btn-login">LOG IN</button>
+    </nav>
+
+    <!-- ── HERO SECTION ── -->
+    <section class="hero">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="orb orb-4"></div>
+        <div class="orb orb-5"></div>
+        <div class="orb orb-6"></div>
+
+        <h1 class="hero-heading">Heading</h1>
+        <div class="hero-card"></div>
+    </section>
+
+    <!-- ── DEALS SECTION ── -->
+    <section class="deals-section" id="deals">
+
+        <!-- Orb scene carried over from deals page -->
+        <div class="deals-orb-scene">
+            <div class="d-orb o-center"></div>
+            <div class="d-orb o-wh-lg"></div>
+            <div class="d-orb o-teal-md"></div>
+            <div class="d-orb o-wh-sm"></div>
+            <div class="d-orb o-teal-sm"></div>
+            <div class="d-orb o-teal-bot"></div>
+            <div class="d-orb o-tiny"></div>
+        </div>
+
+        <h2 class="deals-heading">Deals</h2>
+        <div class="cards-container">
+
+            <!-- Card 1 -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../Assets/deal1.svg" alt="deal1" style="width:300px;height:300px;">
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>LONER PACKAGE</h1>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit perferendis nihil porro rem suscipit, quaerat nam voluptas aperiam maxime, fugit earum. Consequuntur quisquam nihil dolore vel alias, dicta dignissimos id.</p>
+                        <br>
+                        <p><strong>$100</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../Assets/deal2.svg" alt="deal2" style="width:300px;height:300px;">
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>FAMILY PACKAGE</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis mollitia harum libero pariatur id doloribus autem dignissimos architecto odit voluptate, sunt quasi aliquam adipisci, ratione minus optio, temporibus omnis eligendi!</p>
+                        <br>
+                        <p><strong>$100</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../Assets/deal3.svg" alt="deal3" style="width:300px;height:300px;">
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>ALL IN PACKAGE</h1>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste veritatis inventore excepturi. Atque architecto consectetur autem repellendus vero, ipsam voluptatem hic expedita. Architecto minus doloribus possimus. Itaque adipisci cupiditate ullam?</p>
+                        <br>
+                        <p><strong>$100</strong></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#">link</a>
+            <a href="#">link</a>
+            <a href="#">link</a>
+            <a href="#">link</a>
+            <a href="#">link</a>
+            <a href="#">link</a>
+        </div>
+        <div class="footer-socials">
+            <a href="#" class="social-icon">f</a>
+            <a href="#" class="social-icon">&#9633;</a>
+            <a href="#" class="social-icon">&#9743;</a>
+        </div>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        const hero   = document.getElementById('hero');
+
+        function onScroll() {
+            if (window.scrollY > (hero.offsetHeight - 70)) {
+                navbar.classList.add('navbar--scrolled');
+            } else {
+                navbar.classList.remove('navbar--scrolled');
+            }
+        }
+
+        window.addEventListener('scroll', onScroll);
+        onScroll(); // run once on load
+    </script>
+
+</body>
+</html>
