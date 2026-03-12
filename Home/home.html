@@ -9,13 +9,12 @@
 </head>
 <body>
 
-    <!-- NAVBAR — fixed at top always -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <ul class="nav-links">
-            <li><a href="#">NAV</a></li>
-            <li><a href="#">NAV</a></li>
-            <li><a href="#">NAV</a></li>
-            <li><a href="#">NAV</a></li>
+            <li><a href="#deals">DEALS</a></li>
+            <li><a href="#">ABOUT US</a></li>
+            <li><a href="#">APPLY NOW</a></li>
+            <li><a href="#">SUPPORT</a></li>
         </ul>
         <button class="btn-login">LOG IN</button>
     </nav>
@@ -29,107 +28,97 @@
         <div class="orb orb-5"></div>
         <div class="orb orb-6"></div>
 
-        <h1 class="hero-heading">Heading</h1>
-        <div class="hero-card"></div>
+        <h1 class="hero-heading" id="hero-heading">With us, the normal is Fast.</h1>
+        <div class="hero-card">
+            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic numquam expedita sapiente laboriosam magni, explicabo voluptate, voluptatum eaque nisi adipisci quisquam quasi harum recusandae maiores, asperiores placeat dolorem itaque. Consectetur? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta consequatur delectus, sed esse repudiandae illum ad expedita. Necessitatibus perspiciatis accusamus et rerum dignissimos! Culpa accusantium exercitationem repellat ducimus corrupti ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, labore suscipit? Rerum error quae mollitia quo iusto in! Libero labore ducimus natus odio repellat cupiditate repellendus id placeat vel quo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, inventore earum. Animi incidunt iure praesentium cupiditate recusandae sint provident error temporibus reprehenderit velit, odio numquam culpa rerum ratione, repellendus ad.</p>
+        </div>
     </section>
 
     <!-- ── DEALS SECTION ── -->
-    <section class="deals-section" id="deals">
+<section class="deals-section" id="deals">
 
-        <!-- Orb scene carried over from deals page -->
-        <div class="deals-orb-scene">
-            <div class="d-orb o-center"></div>
-            <div class="d-orb o-wh-lg"></div>
-            <div class="d-orb o-teal-md"></div>
-            <div class="d-orb o-wh-sm"></div>
-            <div class="d-orb o-teal-sm"></div>
-            <div class="d-orb o-teal-bot"></div>
-            <div class="d-orb o-tiny"></div>
+    <!-- Orb scene carried over from deals page -->
+    <div class="deals-orb-scene">
+        <div class="d-orb o-center"></div>
+        <div class="d-orb o-wh-lg"></div>
+        <div class="d-orb o-teal-md"></div>
+        <div class="d-orb o-wh-sm"></div>
+        <div class="d-orb o-teal-sm"></div>
+        <div class="d-orb o-teal-bot"></div>
+        <div class="d-orb o-tiny"></div>
+    </div>
+
+    <h2 class="deals-heading">Deals</h2>
+    <div class="cards-container">
+
+        <!-- Card 1 -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="../Assets/deal1.svg" alt="deal1" style="width:300px;height:300px;">
+                </div>
+                <div class="flip-card-back">
+                    <h1>LONER PACKAGE</h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit perferendis nihil porro rem suscipit, quaerat nam voluptas aperiam maxime, fugit earum.</p>
+                    <p><strong>$100</strong></p>
+                    <button class="card-btn">BUY NOW</button>  <!-- Added button -->
+                </div>
+            </div>
         </div>
 
-        <h2 class="deals-heading">Deals</h2>
-        <div class="cards-container">
-
-            <!-- Card 1 -->
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="../Assets/deal1.svg" alt="deal1" style="width:300px;height:300px;">
-                    </div>
-                    <div class="flip-card-back">
-                        <h1>LONER PACKAGE</h1>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit perferendis nihil porro rem suscipit, quaerat nam voluptas aperiam maxime, fugit earum. Consequuntur quisquam nihil dolore vel alias, dicta dignissimos id.</p>
-                        <br>
-                        <p><strong>$100</strong></p>
-                    </div>
+        <!-- Card 2 -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="../Assets/deal2.svg" alt="deal2" style="width:300px;height:300px;">
+                </div>
+                <div class="flip-card-back">
+                    <h1>FAMILY PACKAGE</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis mollitia harum libero pariatur id doloribus autem dignissimos architecto odit voluptate.</p>
+                    <p><strong>$100</strong></p>
+                    <button class="card-btn">BUY NOW</button> 
                 </div>
             </div>
-
-            <!-- Card 2 -->
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="../Assets/deal2.svg" alt="deal2" style="width:300px;height:300px;">
-                    </div>
-                    <div class="flip-card-back">
-                        <h1>FAMILY PACKAGE</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis mollitia harum libero pariatur id doloribus autem dignissimos architecto odit voluptate, sunt quasi aliquam adipisci, ratione minus optio, temporibus omnis eligendi!</p>
-                        <br>
-                        <p><strong>$100</strong></p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="../Assets/deal3.svg" alt="deal3" style="width:300px;height:300px;">
-                    </div>
-                    <div class="flip-card-back">
-                        <h1>ALL IN PACKAGE</h1>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste veritatis inventore excepturi. Atque architecto consectetur autem repellendus vero, ipsam voluptatem hic expedita. Architecto minus doloribus possimus. Itaque adipisci cupiditate ullam?</p>
-                        <br>
-                        <p><strong>$100</strong></p>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </section>
+
+        <!-- Card 3 -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="../Assets/deal3.svg" alt="deal3" style="width:300px;height:300px;">
+                </div>
+                <div class="flip-card-back">
+                    <h1>ALL IN PACKAGE</h1>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste veritatis inventore excepturi. Atque architecto consectetur autem repellendus vero, ipsam voluptatem hic expedita.</p>
+                    <p><strong>$100</strong></p>
+                    <button class="card-btn">BUY NOW</button>  
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
 
     <!-- ── FOOTER ── -->
     <footer class="footer">
-        <div class="footer-links">
-            <a href="#">link</a>
-            <a href="#">link</a>
-            <a href="#">link</a>
-            <a href="#">link</a>
-            <a href="#">link</a>
-            <a href="#">link</a>
-        </div>
-        <div class="footer-socials">
-            <a href="#" class="social-icon">f</a>
-            <a href="#" class="social-icon">&#9633;</a>
-            <a href="#" class="social-icon">&#9743;</a>
-        </div>
-    </footer>
+    <div class="footer-links">
+        <a href="#">link</a>
+        <a href="#">link</a>
+        <a href="#">link</a>
 
-    <script>
-        const navbar = document.getElementById('navbar');
-        const hero   = document.getElementById('hero');
-
-        function onScroll() {
-            if (window.scrollY > (hero.offsetHeight - 70)) {
-                navbar.classList.add('navbar--scrolled');
-            } else {
-                navbar.classList.remove('navbar--scrolled');
-            }
-        }
-
-        window.addEventListener('scroll', onScroll);
-        onScroll(); // run once on load
-    </script>
+    </div>
+    <div class="footer-socials">  <!-- This div was missing in your code -->
+        <a href="#" class="social-icon">
+            <img src="../Assets/fb.png" alt="Facebook Icon" class="footer-icon">
+        </a>
+        <a href="#" class="social-icon">
+            <img src="../Assets/ig.png" alt="Instagram" class="footer-icon">
+        </a>
+        <a href="#" class="social-icon">
+            <img src="../Assets/call.png" alt="Contact us" class="footer-icon">
+        </a>
+    </div>
+</footer>
 
 </body>
 </html>

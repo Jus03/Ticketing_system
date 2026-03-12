@@ -17,6 +17,7 @@
     --text-nav:    darkslategrey;
     --card-bg:     rgba(255, 255, 255, 0.18);
     --page-bg:     #c4ceca;
+    --nav-scrolled-bg: rgba(100, 115, 112, 0.9);
 }
 
 html, body {
@@ -24,16 +25,13 @@ html, body {
     height: 100%;
     overflow-x: hidden;
     font-family: 'Arimo', sans-serif;
-}
-
-body {
     background-color: var(--page-bg);
-    min-height: 100vh;
+    min-height: auto;
+
 }
 
-/* ── NAVBAR ── */
 .navbar {
-    position: fixed;
+    position: static;
     top: 0;
     left: 0;
     width: 100%;
@@ -43,23 +41,8 @@ body {
     justify-content: center;
     padding: 0 48px;
     height: 70px;
-
-    /* start fully transparent */
-    background: transparent;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    border-bottom: 1px solid rgba(255,255,255,0.3);
-
-    /* smooth colour transition */
-    transition: background 0.45s ease, backdrop-filter 0.45s ease, border-color 0.45s ease;
-}
-
-/* class toggled by JS when scrolled past hero */
-.navbar.navbar--scrolled {
-    background: var(--nav-scrolled-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    background:  transparent;  backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .nav-links {
@@ -67,6 +50,7 @@ body {
     align-items: center;
     gap: 36px;
     list-style: none;
+    margin: 0 auto;
 }
 
 .nav-links li { display: inline; }
@@ -75,9 +59,8 @@ body {
     font-family: 'Arimo', sans-serif;
     font-weight: 500;
     font-size: 1rem;
-    color: var(--text-nav);
+    color: teal;
     text-decoration: none;
-    letter-spacing: 0.05em;
     opacity: 0.85;
     transition: opacity 0.2s;
     white-space: nowrap;
@@ -121,8 +104,9 @@ body {
 .hero {
     position: relative;
     width: 100%;
-    min-height: 90vh;
+    /* Remove min-height: 90vh */
     padding-top: 70px;
+    padding-bottom: 40px; /* Add controlled padding instead */
     overflow: hidden;
 }
 
@@ -134,16 +118,17 @@ body {
     font-size: clamp(1.8rem, 4vw, 2.8rem);
     color: var(--text-dark);
     text-align: center;
-    margin-top: 60px;
+    margin-top: 40px; /* Reduced from 60px */
+    margin-bottom: 30px;
 }
 
 .hero-card {
     position: relative;
     z-index: 10;
-    margin: 36px auto 0;
+    margin: 0 auto;
     width: 80%;
     max-width: 900px;
-    height: 300px;
+    /* Remove fixed height - let content determine it */
     border-radius: 32px;
     background: var(--card-bg);
     border: 1.5px solid rgba(255,255,255,0.35);
@@ -152,9 +137,31 @@ body {
     box-shadow:
         0 8px 40px rgba(0,0,0,0.08),
         inset 0 1px 0 rgba(255,255,255,0.5);
+    padding: 30px;
 }
 
-/* ── HERO FLOATING ORBS ── */
+.hero-card-text {
+    font-family: 'Arimo', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    text-align: left;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .hero-card {
+        width: 92%;
+        padding: 20px;
+    }
+    
+    .hero-card-text {
+        font-size: 1rem;
+    }
+}
+
 .orb {
     position: absolute;
     border-radius: 50%;
@@ -246,30 +253,47 @@ body {
     position: relative;
     z-index: 10;
     width: 100%;
-    padding: 80px 40px 100px;
+    padding: 40px 40px 80px;
     background-color: var(--page-bg);
-    overflow: hidden;
+    overflow: visible; /* Change to visible temporarily */
+    min-height: 700px; /* Give plenty of space */
 }
 
+/* Orb scene - keep orbs contained but visible */
+.deals-orb-scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Heading - properly centered */
 .deals-heading {
     position: relative;
-    z-index: 10;
+    z-index: 20;
     font-family: 'Arimo', sans-serif;
     font-weight: 700;
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     color: var(--text-dark);
     text-align: center;
-    margin-bottom: 48px;
+    margin: 0 auto 40px auto;
+    width: 100%;
+    letter-spacing: 2px;
 }
 
+/* Make sure the cards container doesn't affect heading centering */
 .cards-container {
     position: relative;
     z-index: 10;
     display: flex;
     gap: 24px;
-    justify-content: center;
+    justify-content: center; /* This centers the cards */
     flex-wrap: wrap;
     padding: 0;
+    margin: 0 auto; /* Center the container if needed */
 }
 
 /* ── DEALS ORB SCENE ── */
@@ -405,12 +429,18 @@ body {
     50%       { transform: translateY(5px); }
 }
 
-/* ── FLIP CARDS ── */
+/* ── FLIP CARDS (Alternative version with orb-like shadows) ── */
 .flip-card {
     background-color: transparent;
     width: 300px;
     height: 300px;
     perspective: 1000px;
+    filter: drop-shadow(0 15px 25px rgba(77, 217, 192, 0.25)); /* Teal-tinted shadow */
+    transition: filter 0.4s ease;
+}
+
+.flip-card:hover {
+    filter: drop-shadow(0 25px 35px rgba(77, 217, 192, 0.4)); /* Enhanced teal shadow on hover */
 }
 
 .flip-card-inner {
@@ -437,8 +467,22 @@ body {
     overflow: hidden;
 }
 
+.flip-card-front {
+    /* Add subtle glow that matches your orb aesthetic */
+    box-shadow: 
+        0 10px 30px rgba(77, 217, 192, 0.25),
+        inset 0 2px 8px rgba(255, 255, 255, 0.6);
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 .flip-card-back {
-    background-color: rgb(41, 235, 241);
+    background: linear-gradient(145deg, rgb(41, 235, 241), rgb(20, 200, 210)); /* Gradient for depth */
     color: #1a1a1a;
     transform: rotateY(180deg);
     display: flex;
@@ -447,15 +491,106 @@ body {
     justify-content: center;
     gap: 8px;
     font-family: 'Arimo', sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+    /* Shadow that matches your orb inset shadows */
+    box-shadow: 
+        inset -8px -8px 16px rgba(0, 0, 0, 0.1),
+        inset 8px 8px 16px rgba(255, 255, 255, 0.5),
+        0 15px 25px rgba(77, 217, 192, 0.3);
 }
 
-/* ── FOOTER ── */
+.flip-card-back h1 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.flip-card-back p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-align: center;
+    max-width: 260px;
+}
+
+.flip-card-back p strong {
+    font-size: 1.2rem;
+    color: #000;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Add this to your existing CSS - Button styling for flip card back */
+.flip-card-back .card-btn {
+    --color: black;
+    font-family: 'Arimo', sans-serif;
+    display: inline-block;
+    width: 8em;
+    height: 2.6em;
+    line-height: 2.5em;
+    margin: 10px 0 0 0;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color 0.5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--color);
+    background: transparent;
+    text-decoration: none;
+    text-align: center;
+}
+
+.flip-card-back .card-btn:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+    top: 100%;
+    left: 100%;
+    transition: all 0.7s;
+}
+
+.flip-card-back .card-btn:hover {
+    color: #fff;
+}
+
+.flip-card-back .card-btn:hover:before {
+    top: -30px;
+    left: -30px;
+}
+
+/* Footer icon styling */
+.footer-socials {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.footer-icon {
+    width: 24px;
+    height: 24px;
+    opacity: 0.65;
+    transition: opacity 0.2s;
+    display: block;
+}
+
+.footer-icon:hover {
+    opacity: 1;
+}
+
+/* Make sure your footer is set up correctly */
 .footer {
     position: relative;
     z-index: 10;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* This puts links on left, icons on right */
     padding: 24px 48px;
     background: rgba(100, 115, 112, 0.35);
     border-top: 1px solid rgba(255,255,255,0.2);
@@ -471,34 +606,17 @@ body {
 
 .footer-links a {
     font-family: 'Arimo', sans-serif;
-    font-size: 0.88rem;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--text-dark);
     text-decoration: none;
     opacity: 0.7;
-    letter-spacing: 0.04em;
     transition: opacity 0.2s;
 }
 
-.footer-links a:hover { opacity: 1; }
-
-.footer-socials {
-    display: flex;
-    gap: 20px;
-    align-items: center;
+.footer-links a:hover { 
+    opacity: 1; 
 }
-
-.social-icon {
-    font-family: 'Arimo', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    text-decoration: none;
-    opacity: 0.65;
-    transition: opacity 0.2s;
-}
-
-.social-icon:hover { opacity: 1; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
