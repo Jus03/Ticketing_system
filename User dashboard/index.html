@@ -25,20 +25,20 @@
     <aside class="sidebar">
       <button class="sb-ham" aria-label="Menu">&#9776;</button>
 
-      <div class="sb-avatar">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
-          <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-        </svg>
-      </div>
+      <div class="sb-avatar" onclick="window.location.href='deals.html'" style="cursor: pointer;">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+    <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+  </svg>
+</div>
 
-      <button class="nav-btn active">Text</button>
-      <button class="nav-btn">Text</button>
-      <button class="nav-btn">Text</button>
-      <button class="nav-btn">Text</button>
+      <button class="nav-btn">Get a ticket</button>
+      <button class="nav-btn">Billing Statement</button>
+      <button class="nav-btn">Upgrade Plan</button>
+      <button class="nav-btn"></button>
 
       <div class="sb-spacer"></div>
 
-      <button class="logout-btn" onclick="window.location='login-admin.html'">
+      <button class="logout-btn" id="logoutBtn" >
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/>
           <polyline points="16 17 21 12 16 7"/>
@@ -50,15 +50,26 @@
 
     <!-- Hero -->
     <main class="main">
-      <div class="hero-sub">heading1</div>
+      <div class="hero-sub">Encountering problems with your internet connectivity?</div>
       <div class="hero-main">
-        Heading1
+        We are here to fix it.
         <span class="hero-arrow">&#8594;</span>
       </div>
-      <button class="apply-btn">Apply</button>
-    </main>
+<button class="apply-btn" onclick="window.location.href='/deals.html'">Apply</button>    </main>
 
   </div>
 
+  <script>
+   document.getElementById("logoutBtn").addEventListener("click", function () {
+    
+    fetch("/logout", {
+        method: "POST"
+    })
+    .then(() => {
+        window.location.href = "/auth/login.html";
+    });
+
+}); 
+  </script>
 </body>
 </html>

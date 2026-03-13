@@ -17,7 +17,6 @@
       overflow: hidden;
     }
 
-    /* ── Viewport ── */
     .viewport {
       flex: 1; position: relative;
       display: flex; overflow: hidden;
@@ -36,7 +35,6 @@
       pointer-events: none;
     }
 
-    /* Giant teal center */
     .o-center {
       width: 300px; height: 300px;
       top: 50%; left: 58%;
@@ -51,7 +49,6 @@
       animation: f-center 6s ease-in-out infinite, fadein .9s .1s both;
     }
 
-    /* Large white top-right */
     .o-wh-lg {
       width: 155px; height: 155px;
       top: 3%; right: 13%;
@@ -64,7 +61,6 @@
       animation: f-a 7s ease-in-out infinite, fadein .7s .2s both;
     }
 
-    /* Medium teal top-right */
     .o-teal-md {
       width: 105px; height: 105px;
       top: 6%; right: 27%;
@@ -77,7 +73,6 @@
       animation: f-b 5.5s ease-in-out infinite, fadein .7s .3s both;
     }
 
-    /* Small white mid-top */
     .o-wh-sm {
       width: 52px; height: 52px;
       top: 20%; left: 57%;
@@ -90,7 +85,6 @@
       animation: f-c 4s ease-in-out infinite, fadein .7s .4s both;
     }
 
-    /* Small teal right-mid */
     .o-teal-sm {
       width: 68px; height: 68px;
       top: 55%; right: 9%;
@@ -103,7 +97,6 @@
       animation: f-d 5s ease-in-out infinite, fadein .7s .45s both;
     }
 
-    /* Medium teal bottom */
     .o-teal-bot {
       width: 130px; height: 130px;
       bottom: 7%; left: 60%;
@@ -116,7 +109,6 @@
       animation: f-e 8s ease-in-out infinite, fadein .7s .5s both;
     }
 
-    /* Tiny white dot */
     .o-tiny {
       width: 26px; height: 26px;
       top: 37%; right: 18%;
@@ -136,7 +128,6 @@
     @keyframes slide-left { from{opacity:0;transform:translateX(-28px)} to{opacity:1;transform:translateX(0)} }
     @keyframes fade-up { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
 
-    /* ── Sidebar ── */
     .sidebar {
       position: relative; z-index: 10;
       width: 190px; flex-shrink: 0;
@@ -155,6 +146,7 @@
       align-self: flex-start; margin-bottom: 18px;
       line-height: 1; padding: 2px;
     }
+    
     .sb-avatar {
       width: 42px; height: 42px; border-radius: 50%;
       background: rgba(110,100,125,0.65);
@@ -216,10 +208,9 @@
 
     .hero-sub {
       font-family: 'DM Serif Display', serif;
-      font-style: italic;
-      font-size: 34px;
+      font-size: 24px;
       color: rgba(42,42,42,0.58);
-      letter-spacing: 0.4px;
+      line-height: 1rem;
       text-align: center;
       animation: fade-up .7s .2s cubic-bezier(.22,1,.36,1) both;
     }

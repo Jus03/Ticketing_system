@@ -104,8 +104,7 @@ html, body {
 .hero {
     position: relative;
     width: 100%;
-    /* Remove min-height: 90vh */
-    padding-top: 70px;
+    padding-top: 50px;
     padding-bottom: 40px; /* Add controlled padding instead */
     overflow: hidden;
 }
@@ -115,7 +114,7 @@ html, body {
     z-index: 10;
     font-family: 'Arimo', sans-serif;
     font-weight: 700;
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     color: var(--text-dark);
     text-align: center;
     margin-top: 40px; /* Reduced from 60px */
@@ -143,7 +142,7 @@ html, body {
 .hero-card-text {
     font-family: 'Arimo', sans-serif;
     font-size: 1.1rem;
-    line-height: 1.6;
+    line-height: 10rem;
     color: var(--text-dark);
     text-align: left;
     margin: 0;
@@ -174,7 +173,7 @@ html, body {
     height: 340px;
     background: radial-gradient(circle at 35% 30%, var(--teal-light), var(--teal), var(--teal-dark));
     box-shadow: 0 20px 60px rgba(77, 217, 192, 0.35), inset 0 -10px 30px rgba(0,80,70,0.25);
-    top: 130px;
+    top: 80px;
     right: 6%;
     z-index: 3;
     animation: float1 7s ease-in-out infinite;
@@ -207,7 +206,7 @@ html, body {
     height: 140px;
     background: radial-gradient(circle at 35% 30%, var(--teal-light), var(--teal-dark));
     box-shadow: 0 8px 28px rgba(77, 217, 192, 0.3), inset 0 -4px 12px rgba(0,80,70,0.2);
-    top: 420px;
+    top: 120px;
     right: 3%;
     z-index: 2;
     animation: float1 8s ease-in-out infinite reverse;
@@ -281,7 +280,6 @@ html, body {
     text-align: center;
     margin: 0 auto 40px auto;
     width: 100%;
-    letter-spacing: 2px;
 }
 
 /* Make sure the cards container doesn't affect heading centering */
@@ -439,6 +437,9 @@ html, body {
     transition: filter 0.4s ease;
 }
 
+.hero-card p{
+    line-height: 1.3;
+}
 .flip-card:hover {
     filter: drop-shadow(0 25px 35px rgba(77, 217, 192, 0.4)); /* Enhanced teal shadow on hover */
 }
