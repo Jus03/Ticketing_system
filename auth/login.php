@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn = require_once 'config/conn.php';
+$conn = require_once '../config/conn.php';
 
 $email_error = '';
 $password_error = '';
